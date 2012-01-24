@@ -53,10 +53,7 @@ paternalgrandmother(Grandchild,Grandmother) :- father(Grandchild,Father), mother
 maternalgrandfather(Grandchild,Grandfather) :- mother(Grandchild,Mother), father(Mother,Grandfather).
 maternalgrandmother(Grandchild,Grandmother) :- mother(Grandchild,Mother), mother(Mother,Grandmother).
 
-%sibling(Person,Sibling) :- parent(Person,Parent), parent(Sibling,Parent), \+ (Person=Sibling).
-sibling(Person,Sibling) :- setof((Person,Sibling), Parent^(parent(Person,Parent), parent(Sibling,Parent), \+ Person=Sibling), Sibs),
-                                 member((Person,Sibling), Sibs),
-                                 \+ (Sibling@<Person, member((Sibling, Person), Sibs)).
+sibling(Person,Sibling) :- setof(Sibs, Parent^(parent(Person,Parent), parent(Sibling,Parent), \+ Person=Sibling), Sibs).
 
 brothers(Person) :- sibling(Sibling,Person), male(Sibling).
 brother(PersonA,PersonB) :- sibling(PersonA,PersonB), male(PersonA), \+ (PersonA=PersonB).
