@@ -52,7 +52,7 @@ paternalgrandmother(Grandchild,Grandmother) :- father(Grandchild,Father), mother
 maternalgrandfather(Grandchild,Grandfather) :- mother(Grandchild,Mother), father(Mother,Grandfather).
 maternalgrandmother(Grandchild,Grandmother) :- mother(Grandchild,Mother), mother(Mother,Grandmother).
 
-sibling(Person,Sibling) :- parent(Parent,Person), parent(Parent,Sibling).
+sibling(Person,Sibling) :- parent(Person,Parent), parent(Sibling,Parent), \+ (Person=Sibling).
 
 brothers(Person) :- sibling(Sibling,Person), male(Sibling).
 brother(PersonA,PersonB) :- sibling(PersonA,PersonB), male(PersonA), \+ (PersonA=PersonB).
