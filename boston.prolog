@@ -42,6 +42,7 @@ parent(melissa,freda).
 %
 
 descendent(Person,Descendent) :- parent(Descendent,Person).
+descendent(Person,Descendent) :- parent(Descendent,Parent), descendent(Person,Parent).
 
 father(Child,Father) :- parent(Child,Father), male(Father).
 mother(Child,Mother) :- parent(Child,Mother), female(Mother).
