@@ -50,9 +50,15 @@
 ;;; Associations
 ;;;
 
-(defrel father [child father]
-  (male father)
-  (parent child father))
+(defn father [c f]
+  (all
+   (male f)
+   (parent c f)))
+
+(defn mother [c m]
+  (all
+   (female m)
+   (parent c m)))
 
 (defn grandparent [grandchild grandparent]
   (fresh [p]
@@ -65,6 +71,5 @@
 
 ;; (run* [q]
 ;;   (fresh [c p]
-;;     (male p)
-;;     (parent 'Matthew p)
+;;     (father 'Matthew p)
 ;;     (== q p))) ; (Jeffrey)
