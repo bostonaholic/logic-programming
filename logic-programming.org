@@ -1,0 +1,27 @@
+* What is "logic programming"
+** declarative - describing the 'what' not 'how' of a system
+** logic is expressed in terms of relations, represented as facts and rules
+** computations performed by querying the relations
+* Anatomy of Prolog
+** terms - atoms, numbers, variables, compound terms
+*** atom - general purpose name with no inherent meaning
+*** numbers - float or integers
+*** variables - placeholders for arbitrary terms, begin w/ uppercase or underscore
+*** compound term - "functor" and "arguments"
+**** special cases - lists: [red, yellow, blue]; strings "this is a string"
+** clauses - facts and rules
+*** Head :- Body.
+**** read "Head is true if Body is true"
+**** Body is a list of predicates
+*** fact
+*** rule
+** queries
+*** is garfield a cat?
+*** what things are cats?
+* Use Cases for Logic Programming
+** AI
+** computational lingustics
+** other rules engines
+*** family trees
+*** medical diagnoses
+* Encore! Encore! Encore!
