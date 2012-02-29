@@ -1,10 +1,10 @@
-* What is "logic programming"
-** declarative - describing the 'what' not 'how' of a system
-** logic is expressed in terms of relations, represented as facts and rules
-** computations performed by querying the relations
+* What is "logic programming"?
+** declarative - describing the "what" not "how" of a system
+** logic is expressed in terms of relations, represented as *facts* and *rules*
+** computations are performed by querying the relations
 * Anatomy of Prolog
 ** terms - atoms, numbers, variables, compound terms
-*** atom - general purpose name with no inherent meaning
+*** atoms - general purpose name with no inherent meaning
 *** numbers - float or integers
 *** variables - placeholders for arbitrary terms, begin w/ uppercase or underscore
 *** compound term - "functor" and "arguments"
