@@ -52,13 +52,13 @@
 
 (defn father [c f]
   (all
-   (male f)
-   (parent c f)))
+   (parent c f)
+   (male f)))
 
 (defn mother [c m]
   (all
-   (female m)
-   (parent c m)))
+   (parent c m)
+   (female m)))
 
 (defn grandparent [grandchild grandparent]
   (fresh [p]

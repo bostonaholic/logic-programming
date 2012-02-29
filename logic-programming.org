@@ -21,7 +21,10 @@
 * Use Cases for Logic Programming
 ** AI
 ** computational lingustics
-** other rules engines
+** formal logic
+** theorem proving
+** blah, blah, academia, blah, blah, blah
+** rules engines
 *** family trees
 *** medical diagnoses
 * Encore! Encore! Encore!

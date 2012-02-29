@@ -57,8 +57,6 @@ sibling(Person,Sibling) :- setof(Sibs, Parent^(parent(Person,Parent), parent(Sib
 
 brothers(Person) :- sibling(Sibling,Person), male(Sibling).
 brother(PersonA,PersonB) :- sibling(PersonA,PersonB), male(PersonA), \+ (PersonA=PersonB).
-brothers(PersonA,PersonB) :- brother(PersonA,PersonB), male(PersonB).
 
 sisters(Person) :- sibling(Sibling,Person), female(Sibling).
 sister(PersonA,PersonB) :- sibling(PersonA,PersonB), female(PersonA), \+ (PersonA=PersonB).
-sisters(PersonA,PersonB) :- sister(PersonA,PersonB), female(PersonB).
