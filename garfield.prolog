@@ -9,3 +9,4 @@ owner(garfield, jon).
 % rules
 %
 animal(X) :- cat(X).
+fat(X) :- eats(X, lasagna).
