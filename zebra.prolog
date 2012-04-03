@@ -1,11 +1,11 @@
 %
 % Rules
 %
-is_right(L, R, [L | [R | _]]).
-is_right(L, R, [_ | Rest]) :- is_right(L, R, Rest).
+is_right_of(L, R, [L | [R | _]]).
+is_right_of(L, R, [_ | Rest]) :- is_right(L, R, Rest).
 
-next_to(X, Y, List) :- is_right(X, Y, List).
-next_to(X, Y, List) :- is_right(Y, X, List).
+next_to(X, Y, List) :- is_right_of(X, Y, List).
+next_to(X, Y, List) :- is_right_of(Y, X, List).
 
 %
 % Facts
@@ -17,7 +17,7 @@ owns_zebra(Street, Who) :-
     member(house(_, spaniard, dog, _, _), Street),
     member(house(green, _, _, coffee, _), Street),
     member(house(_, ukrainian, _, tea, _), Street),
-    is_right(house(green, _, _, _, _), house(ivory, _, _, _, _), Street),
+    is_right_of(house(green, _, _, _, _), house(ivory, _, _, _, _), Street),
     member(house(_, _, snails, _, old_gold), Street),
     member(house(yellow, _, _, _, kools), Street),
     [_, _, house(_, _, _, milk, _), _, _] = Street,
