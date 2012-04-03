@@ -18,28 +18,30 @@
 ;;;
 ;;; Facts
 ;;;
-(defn owns-zebra [who]
+(defn owns-zebra [who street]
   (macro/symbol-macrolet [_ (lvar)]
     (all
-      (fresh [street]
-        (== street [_ _ [_ _ _ 'milk _] _ _])
-        (membero ['red 'englishman _ _ _] street)
-        (membero [_ 'spaniard 'dog _ _] street)
-        (membero ['green _ _ 'coffee _] street)
-        (membero [_ 'ukranian _ 'tea _] street)
-        (is-right-of ['green _ _ _ _] ['ivory _ _ _ _] street)
-        (membero [_ _ 'snails _ 'old-gold] street)
-        (membero ['yellow _ _ _ 'kools] street)
-        (firsto street [_ 'norwegian _ _ _])
-        (next-to [_ _ _ _ 'chesterfields] [_ _ 'fox _ _] street)
-        (next-to [_ _ _ _ 'kools] [_ _ 'horse _ _] street)
-        (membero [_ _ _ 'orange-juice 'lucky-strike] street)
-        (membero [_ 'japanese _ _ 'parliaments] street)
-        (next-to [_ 'norwegian _ _ _] ['blue _ _ _ _] street)
-        (membero [_ who 'zebra _ _] street)))))
+      (== street [_ _ [_ _ _ 'milk _] _ _])
+      (membero ['red 'englishman _ _ _] street)
+      (membero [_ 'spaniard 'dog _ _] street)
+      (membero ['green _ _ 'coffee _] street)
+      (membero [_ 'ukranian _ 'tea _] street)
+      (is-right-of ['green _ _ _ _] ['ivory _ _ _ _] street)
+      (membero [_ _ 'snails _ 'old-gold] street)
+      (membero ['yellow _ _ _ 'kools] street)
+      (firsto street [_ 'norwegian _ _ _])
+      (next-to [_ _ _ _ 'chesterfields] [_ _ 'fox _ _] street)
+      (next-to [_ _ _ _ 'kools] [_ _ 'horse _ _] street)
+      (membero [_ _ _ 'orange-juice 'lucky-strike] street)
+      (membero [_ 'japanese _ _ 'parliaments] street)
+      (next-to [_ 'norwegian _ _ _] ['blue _ _ _ _] street)
+      (membero [_ who 'zebra _ _] street))))
+
 
 ;; (run 1 [q]
-;;      (owns-zebra q))
+;;      (fresh [who street]
+;;             (owns-zebra who street)
+;;             (== q who)))
 
 ;; ([[yellow norwegian  fox    _.0          kools]
 ;;   [blue   ukranian   horse  tea          chesterfields]

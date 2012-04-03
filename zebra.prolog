@@ -2,7 +2,7 @@
 % Rules
 %
 is_right_of(L, R, [L | [R | _]]).
-is_right_of(L, R, [_ | Rest]) :- is_right(L, R, Rest).
+is_right_of(L, R, [_ | Rest]) :- is_right_of(L, R, Rest).
 
 next_to(X, Y, List) :- is_right_of(X, Y, List).
 next_to(X, Y, List) :- is_right_of(Y, X, List).
@@ -11,7 +11,7 @@ next_to(X, Y, List) :- is_right_of(Y, X, List).
 % Facts
 %
 % house(Color, Nationality, Pet, Drink, Smoke).
-owns_zebra(Street, Who) :-
+owns_zebra(Who, Street) :-
     Street = [_House1, _House2, _House3, _House4, _House5],
     member(house(red, englishman, _, _, _), Street),
     member(house(_, spaniard, dog, _, _), Street),
