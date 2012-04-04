@@ -6,9 +6,9 @@
 ;;;
 ;;; Rules
 ;;;
-(defne is-right-of [x y list]
-  ([_ _ [x y . ?r]])
-  ([_ _ [_ . ?r]] (is-right-of x y ?r)))
+(defne is-right-of [l r list]
+  ([_ _ [l r . ?r]])
+  ([_ _ [_ . ?r]] (is-right-of l r ?r)))
 
 (defn next-to [x y list]
   (conde
@@ -37,11 +37,19 @@
       (next-to [_ 'norwegian _ _ _] ['blue _ _ _ _] street)
       (membero [_ who 'zebra _ _] street))))
 
+;; (run* [q]
+;;      (fresh [who street]
+;;             (owns-zebra who street)
+;;             (== q who)))
 
 ;; (run 1 [q]
 ;;      (fresh [who street]
 ;;             (owns-zebra who street)
 ;;             (== q who)))
+
+;; (run 1 [who]
+;;      (fresh [street]
+;;             (owns-zebra who street)))
 
 ;; ([[yellow norwegian  fox    _.0          kools]
 ;;   [blue   ukranian   horse  tea          chesterfields]
