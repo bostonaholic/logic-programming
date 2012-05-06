@@ -20,8 +20,8 @@
 ;;;
 (defn owns-zebra [who street]
   (macro/symbol-macrolet [_ (lvar)]
-    (all
-      (== street [_ _ [_ _ _ 'milk _] _ _])
+    (fresh [house1 house2 house3 house4 house5]
+      (== street [house1 house2 house3 house4 house5])
       (membero ['red 'englishman _ _ _] street)
       (membero [_ 'spaniard 'dog _ _] street)
       (membero ['green _ _ 'coffee _] street)
@@ -29,7 +29,9 @@
       (is-right-of ['green _ _ _ _] ['ivory _ _ _ _] street)
       (membero [_ _ 'snails _ 'old-gold] street)
       (membero ['yellow _ _ _ 'kools] street)
-      (firsto street [_ 'norwegian _ _ _])
+      (== house3 [_ _ _ 'milk _])
+      (== house1 [_ 'norwegian _ _ _])
+      ;; (firsto street [_ 'norwegian _ _ _])
       (next-to [_ _ _ _ 'chesterfields] [_ _ 'fox _ _] street)
       (next-to [_ _ _ _ 'kools] [_ _ 'horse _ _] street)
       (membero [_ _ _ 'orange-juice 'lucky-strike] street)
