@@ -1,3 +1,7 @@
+* Resources
+** https://github.com/clojure/core.logic/wiki/A-Core.logic-Primer
+** https://github.com/clojure/core.logic
+** https://github.com/clojure/tools.macro
 * What is "logic programming"?
 ** declarative - describing the "what" not "how" of a system
 ** logic is expressed in terms of relations, represented as *facts* and *rules*
