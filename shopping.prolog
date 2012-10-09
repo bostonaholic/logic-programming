@@ -1,3 +1,5 @@
+% http://okmij.org/ftp/kakuritu/logic-programming.html#daily-schedule
+
 %
 % Rules
 %
